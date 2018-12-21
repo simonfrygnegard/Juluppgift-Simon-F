@@ -1,0 +1,45 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  background-color: red;
+}
+#tomtebild {
+  width: 25vw;
+  height: 45vh;
+
+}
+#julgranbild {
+  width: 25vw;
+  height: 45vh;
+  float: left;
+
+}
+
+#meny {
+  width: 100vw;
+  height: 6vh;
+  background-color: #e60000;
+
+}
+.knapp {
+  width: 10vw;
+  height: 6vh;
+  background-color: red;
+  cursor: pointer;
+
+}
+
+#cover {
+  width: 100vw;
+  height: 75vh;
+
+}
+
+.xmas {
+  font-size: 5vh;
+}
+
+#lampor {
+  width: 100vw;
+  height: 15vh;
+}

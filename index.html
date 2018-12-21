@@ -1,0 +1,74 @@
+<html>
+  <head>
+<link rel="stylesheet" type="text/css" href="css.css">
+<script>
+//nedräkning till julafton
+  function calc() {
+    today = new Date();
+
+    xmas = new Date("December 24, " + today.getFullYear());
+
+    if (today > xmas) {
+        xmas.setYear(today.getFullYear() + 1);
+    }
+
+    msPerDay = 24 * 60 * 60 * 1000;
+    timeLeft = (xmas.getTime() - today.getTime());
+    e_daysLeft = timeLeft / msPerDay;
+    daysLeft = Math.floor(e_daysLeft);
+    e_hrsLeft = (e_daysLeft - daysLeft) * 24;
+    hrsLeft = Math.floor(e_hrsLeft);
+    e_minsLeft = (e_hrsLeft - hrsLeft) * 60;
+    minsLeft = Math.floor(e_minsLeft);
+    e_secsLeft = (e_minsLeft - minsLeft) * 60;
+    secsLeft = Math.floor(e_secsLeft);
+
+    var c = document.getElementsByClassName("xmas");
+    var i;
+    for (i = 0; i < c.length; i++) {
+
+        c[i].innerHTML = "There are " + daysLeft + " days, " + hrsLeft + " hours, " + minsLeft + " minutes, and " + secsLeft + " seconds until Santa arrives!";
+    }
+
+}
+setInterval(calc, 0);
+// Play function till musiken
+var audio = new Audio('Snow.mp3');
+function musicHint () {
+  audio.play();
+}
+//Paus function till musiken
+function musicStop(){
+  audio.pause();
+}
+
+
+  </script>
+
+
+
+  </head>
+  <body>
+    <img id="lampor" src="lampor.png">
+  <div id="meny">
+<!-- Knappar till musiken för start och stopp -->
+    <button onclick="musicHint()" class="knapp "type="button">Spela Julmusik!</button>
+    <button onclick="musicStop()" class="knapp "type="button">Stoppa Julmusiken!</button>
+
+    </div>
+
+
+    <div id="cover">
+        <p class="xmas"></p>
+        <div id="julgran">
+          <img id="julgranbild" src="julgran.png">
+          </div>
+      <div id="tomte">
+        <img id="tomtebild" src="tomten.png">
+        </div>
+          </div>
+
+
+
+  </body>
+</html>
